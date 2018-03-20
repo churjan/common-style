@@ -1,0 +1,35 @@
+.loading:after {
+  display: inline-block;
+  overflow: hidden;
+  vertical-align: bottom;
+  content: '\2026';
+  -webkit-animation: ellipsis 3s infinite;
+          animation: ellipsis 3s infinite;
+}
+
+@-webkit-keyframes ellipsis {
+  from {
+    width: 0;
+  }
+  to {
+    width: 1em;
+  }
+}
+
+@keyframes ellipsis {
+  from {
+    width: 0;
+  }
+  to {
+    width: 1em;
+  }
+}
+
+.clearfix:before, .clearfix:after {
+  display: table;
+  content: " ";
+}
+
+.clearfix:after {
+  clear: both;
+}

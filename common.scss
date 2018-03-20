@@ -1,0 +1,48 @@
+//单行超出添加省略号
+@mixin ellipsis($width:auto) {
+  width:$width;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+//多行超出添加省略号
+@mixin multi-ellipsis($len:3) {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: $len;
+  overflow: hidden;
+}
+
+// 省略号动画效果
+.loading{
+  &:after{
+    display: inline-block;
+    overflow: hidden;
+    vertical-align: bottom;
+    content: '\2026';
+    animation: ellipsis 3s infinite;
+  }
+}
+
+@keyframes ellipsis{
+  from{
+    width: 0;
+  }
+  to{
+    width: 1em;
+  }
+}
+
+
+//清除浮动
+.clearfix {
+  &:before,
+  &:after {
+    display: table;
+    content: " ";
+  }
+  &:after {
+    clear: both;
+  }
+}
